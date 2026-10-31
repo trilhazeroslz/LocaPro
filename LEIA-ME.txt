@@ -1,0 +1,23 @@
+LOCAPRO 2.0 — INSTALAÇÃO
+
+ARQUIVOS
+- locapro_sistema_locacao_projetores_atualizado.html: aplicação web.
+- api.php: serviço de leitura e gravação no servidor.
+- config.php: senha da sincronização (altere antes de publicar).
+- dados/: pasta onde o servidor grava locapro_data.json.
+
+PUBLICAÇÃO
+1. Envie o HTML, api.php, config.php, .htaccess e a pasta dados para a mesma pasta do seu domínio (ex.: public_html/locapro/).
+2. Abra config.php e troque ALTERE-ESTA-SENHA-ANTES-DE-PUBLICAR por uma senha longa e exclusiva.
+3. Garanta que o PHP esteja habilitado na hospedagem.
+4. Dê permissão de escrita à pasta dados para o usuário do PHP (normalmente 750 ou 755, conforme a hospedagem).
+5. Acesse o HTML pelo endereço HTTPS do domínio. Entre em Configurações > Armazenamento online no domínio.
+6. Clique em “Salvar online” para enviar os dados deste dispositivo. Em outro dispositivo, use “Sincronizar agora” e confirme o carregamento.
+
+IMPORTANTE
+- O sistema continua guardando uma cópia local no navegador. O armazenamento online é acionado pelos botões de sincronização; não é automático.
+- A senha é solicitada no primeiro uso e mantida apenas na sessão atual do navegador.
+- Faça backups regulares pelo botão Exportar backup.
+- Esta versão fornece uma senha compartilhada simples para proteger a API. Para uso com vários funcionários, dados pessoais ou operação comercial crítica, recomendamos autenticação individual, HTTPS obrigatório e backups gerenciados pela hospedagem.
+- O arquivo de dados contém informações comerciais e de clientes. Restrinja o acesso à pasta dados. O .htaccess incluído bloqueia listagem e acesso direto em servidores Apache; em Nginx, configure bloqueio equivalente.
+- A hospedagem precisa permitir PHP e gravação na pasta dados. Um HTML aberto localmente (file://) não sincroniza.
